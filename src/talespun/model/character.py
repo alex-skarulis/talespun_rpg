@@ -1,19 +1,62 @@
 from pydantic import BaseModel, Field
-from typing import Optional, List, Dict
+from typing import List, Dict, Optional
+from talespun.data_loader import get_ancestry_by_name
 
-class AttributeSet(BaseModel):
-    strength: int = 10
-    dexterity: int = 10
-    constitution: int = 10
-    intelligence: int = 10
-    wisdom: int = 10
-    charisma: int = 10
+class ModifierChange(BaseModel):
+    source: str
+    reason: Optional[str] = None
+    delta: int = 0
+
+class AbilityModifier(BaseModel):
+    base: int = 0
+    changes: List[ModifierChange] = []
+
+    @property
+    def total(self) -> int:
+        return self.base + sum(change.delta for change in self.changes)
+
+    def apply(self, delta: int, source: str, reason: Optional[str] = None):
+        self.changes.append(ModifierChange(source=source, reason=reason, delta=delta))
+
+class AbilityScores(BaseModel):
+    STR: AbilityModifier = Field(default_factory=AbilityModifier)
+    DEX: AbilityModifier = Field(default_factory=AbilityModifier)
+    CON: AbilityModifier = Field(default_factory=AbilityModifier)
+    INT: AbilityModifier = Field(default_factory=AbilityModifier)
+    WIS: AbilityModifier = Field(default_factory=AbilityModifier)
+    CHA: AbilityModifier = Field(default_factory=AbilityModifier)
+
+    def apply_boost(self, ability: str, source: str, reason: Optional[str] = None):
+        getattr(self, ability).apply(delta=1, source=source, reason=reason)
+
+    def apply_flaw(self, ability: str, source: str, reason: Optional[str] = None):
+        getattr(self, ability).apply(delta=-1, source=source, reason=reason)
+
+    def summary(self) -> Dict[str, int]:
+        return {stat: getattr(self, stat).total for stat in self.__fields__}
 
 class Character(BaseModel):
     player_name: str
     character_name: str
     character_class: str
     ancestry: str
-    attributes: AttributeSet
-    key_attribute: Optional[str]
-    secondary_attributes: List[str] = []
+    key_attribute: Optional[str] = None
+    ability_scores: AbilityScores = Field(default_factory=AbilityScores)
+    ancestry_applied: bool = False
+
+    def apply_ancestry(self):
+        ancestry_data = get_ancestry_by_name(self.ancestry)
+        for boost in ancestry_data.get("boosts", []):
+            if boost["type"] == "fixed":
+                self.ability_scores.apply_boost(boost["ability"], source="Ancestry")
+            elif boost["type"] == "free":
+                chosen = "STR"
+                self.ability_scores.apply_boost(chosen, source="Ancestry (Free)")
+        for flaw in ancestry_data.get("flaws", []):
+            self.ability_scores.apply_flaw(flaw["ability"], source="Ancestry")
+        self.ancestry_applied = True
+
+    def print_ability_summary(self):
+        print("Ability Modifier Summary:")
+        for stat, value in self.ability_scores.summary().items():
+            print(f"  {stat}: {value}")

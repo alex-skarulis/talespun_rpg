@@ -1,7 +1,10 @@
 [project]
 name = "talespun-rpg"
 version = "0.1.0"
-description = "Add your description here"
+description = "A character creation engine for Talespun — a story-first introduction to Pathfinder 2e. This tool guides players through building memorable characters using Player Core rules, blending mechanical precision with imaginative worldbuilding."
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "pydantic>=2.11.5",
+    "ujson>=5.10.0",
+]

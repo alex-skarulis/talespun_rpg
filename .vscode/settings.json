@@ -1,0 +1,8 @@
+{
+    "cSpell.words": [
+        "elven","talespun"
+    ],
+  "python.analysis.extraPaths": [
+    "./src"
+  ]
+}
