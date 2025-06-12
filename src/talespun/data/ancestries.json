@@ -6,23 +6,33 @@
     "size": "Medium",
     "speed": 20,
     "vision": "Darkvision",
-    "boosts": [
+    "ability_modifiers": [
       {
         "type": "fixed",
-        "ability": "CON"
+        "options": "CON",
+        "value": 1
       },
       {
         "type": "fixed",
-        "ability": "WIS"
+        "options": "WIS",
+        "value": 1
       },
       {
-        "type": "free"
-      }
-    ],
-    "flaws": [
+        "type": "choice",
+        "options": [
+          "STR",
+          "DEX",
+          "CON",
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "value": 1
+      },
       {
         "type": "fixed",
-        "ability": "CHA"
+        "options": "CHA",
+        "value": -1
       }
     ],
     "languages": {
@@ -62,23 +72,33 @@
     "size": "Medium",
     "speed": 30,
     "vision": "Low-light vision",
-    "boosts": [
+    "ability_modifiers": [
       {
         "type": "fixed",
-        "ability": "DEX"
+        "options": "DEX",
+        "value": 1
       },
       {
         "type": "fixed",
-        "ability": "INT"
+        "options": "INT",
+        "value": 1
       },
       {
-        "type": "free"
-      }
-    ],
-    "flaws": [
+        "type": "choice",
+        "options": [
+          "STR",
+          "DEX",
+          "CON",
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "value": 1
+      },
       {
         "type": "fixed",
-        "ability": "CON"
+        "options": "CON",
+        "value": -1
       }
     ],
     "languages": {
@@ -112,132 +132,38 @@
     ]
   },
   {
-    "name": "Gnome",
-    "source": "Player Core 1",
-    "hp": 8,
-    "size": "Small",
-    "speed": 25,
-    "vision": "Low-light vision",
-    "boosts": [
-      {
-        "type": "fixed",
-        "ability": "CON"
-      },
-      {
-        "type": "fixed",
-        "ability": "CHA"
-      },
-      {
-        "type": "free"
-      }
-    ],
-    "flaws": [
-      {
-        "type": "fixed",
-        "ability": "STR"
-      }
-    ],
-    "languages": {
-      "starting": [
-        "Common",
-        "Gnomish",
-        "Sylvan"
-      ],
-      "options": [
-        "Draconic",
-        "Dwarven",
-        "Elven",
-        "Goblin",
-        "Orcish"
-      ]
-    },
-    "traits": [
-      "gnome",
-      "humanoid"
-    ],
-    "description": "Colorful and curious, gnomes live vibrant lives and draw power from the First World.",
-    "flavor_prompts": [
-      "What obsession drives your latest adventure?",
-      "What trickster spirit first whispered to you?"
-    ],
-    "heritage_options": [
-      "Chameleon Gnome",
-      "Fey-Touched Gnome",
-      "Sensate Gnome",
-      "Wellspring Gnome"
-    ]
-  },
-  {
-    "name": "Goblin",
-    "source": "Player Core 1",
-    "hp": 6,
-    "size": "Small",
-    "speed": 25,
-    "vision": "Darkvision",
-    "boosts": [
-      {
-        "type": "fixed",
-        "ability": "DEX"
-      },
-      {
-        "type": "fixed",
-        "ability": "CHA"
-      },
-      {
-        "type": "free"
-      }
-    ],
-    "flaws": [
-      {
-        "type": "fixed",
-        "ability": "WIS"
-      }
-    ],
-    "languages": {
-      "starting": [
-        "Common",
-        "Goblin"
-      ],
-      "options": [
-        "Draconic",
-        "Dwarven",
-        "Gnoll",
-        "Gnomish",
-        "Orcish"
-      ]
-    },
-    "traits": [
-      "goblin",
-      "humanoid"
-    ],
-    "description": "Once feared as monsters, goblins now find their place as clever and chaotic adventurers.",
-    "flavor_prompts": [
-      "What song did you invent last week?",
-      "What part of fire is your favorite?"
-    ],
-    "heritage_options": [
-      "Burnback Goblin",
-      "Charhide Goblin",
-      "Irongut Goblin",
-      "Unbreakable Goblin"
-    ]
-  },
-  {
     "name": "Human",
     "source": "Player Core 1",
     "hp": 8,
     "size": "Medium",
     "speed": 25,
     "vision": "Normal",
-    "boosts": [
+    "ability_modifiers": [
       {
-        "type": "free"
+        "type": "choice",
+        "options": [
+          "STR",
+          "DEX",
+          "CON",
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "value": 1
       },
       {
-        "type": "free"
+        "type": "choice",
+        "options": [
+          "STR",
+          "DEX",
+          "CON",
+          "INT",
+          "WIS",
+          "CHA"
+        ],
+        "value": 1
       }
     ],
-    "flaws": [],
     "languages": {
       "starting": [
         "Common"

@@ -26,11 +26,8 @@ class AbilityScores(BaseModel):
     WIS: AbilityModifier = Field(default_factory=AbilityModifier)
     CHA: AbilityModifier = Field(default_factory=AbilityModifier)
 
-    def apply_boost(self, ability: str, source: str, reason: Optional[str] = None):
-        getattr(self, ability).apply(delta=1, source=source, reason=reason)
-
-    def apply_flaw(self, ability: str, source: str, reason: Optional[str] = None):
-        getattr(self, ability).apply(delta=-1, source=source, reason=reason)
+    def adjust_modifier(self, ability: str, delta: int, source: str, reason: Optional[str] = None):
+        getattr(self, ability.upper()).apply(delta=delta, source=source, reason=reason)
 
     def summary(self) -> Dict[str, int]:
         return {stat: getattr(self, stat).total for stat in self.__fields__}
@@ -46,14 +43,17 @@ class Character(BaseModel):
 
     def apply_ancestry(self):
         ancestry_data = get_ancestry_by_name(self.ancestry)
-        for boost in ancestry_data.get("boosts", []):
-            if boost["type"] == "fixed":
-                self.ability_scores.apply_boost(boost["ability"], source="Ancestry")
-            elif boost["type"] == "free":
-                chosen = "STR"
-                self.ability_scores.apply_boost(chosen, source="Ancestry (Free)")
-        for flaw in ancestry_data.get("flaws", []):
-            self.ability_scores.apply_flaw(flaw["ability"], source="Ancestry")
+        source = f"Ancestry ({self.ancestry})"
+        for mod in ancestry_data.get("ability_modifiers", []):
+            delta = mod["value"]
+            if mod["type"] == "fixed":
+                self.ability_scores.adjust_modifier(mod["options"], delta, source=source)
+            elif mod["type"] == "choice":
+                options = mod["options"]
+                # For now, just pick the first option (later: prompt user or CLI)
+                chosen = options[0]
+                self.ability_scores.adjust_modifier(chosen, delta, source=source + " (choice)")
+
         self.ancestry_applied = True
 
     def print_ability_summary(self):
