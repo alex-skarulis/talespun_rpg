@@ -1,0 +1,15 @@
+{
+  "id": "elf",
+  "name": "Elf",
+  "description": "Elves are nimble, long-lived, and attuned to magic and nature.",
+  "ability_modifiers": [
+    { "type": "fixed", "ability": "DEX", "value": 1 },
+    { "type": "fixed", "ability": "INT", "value": 1 },
+    { "type": "fixed", "ability": "CON", "value": -1 },
+    { "type": "free", "options": ["STR", "DEX", "CON", "INT", "WIS", "CHA"], "value": 1 }
+  ],
+  "heritages": ["Seer Elf", "Whisper Elf", "Cavern Elf", "Arctic Elf"],
+  "default_image": "images/elf_portrait.png",
+  "default_video": "video/elf_intro.mp4",
+  "default_audio": "audio/elf_voice_intro.mp3"
+}

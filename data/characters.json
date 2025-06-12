@@ -1,0 +1,15 @@
+[
+  {
+    "ancestry": "Dwarf",
+    "free_ability_boost": "STR",
+    "heritage": "Death Warden",
+    "class": "Cleric",
+    "class_option": "Warpriest"
+  },
+  {
+    "ancestry": "Orc",
+    "heritage": "Ironfang",
+    "class": "Cleric",
+    "class_option": "Cloistered Cleric"
+  }
+]

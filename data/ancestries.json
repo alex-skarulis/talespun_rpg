@@ -1,0 +1,211 @@
+[
+  {
+    "id": "dwarf",
+    "name": "Dwarf",
+    "summary": "Stout and steadfast defenders of tradition.",
+    "file": "ancestries/dwarf.json",
+    "image": "images/dwarf_portrait.png",
+    "source": "Player Core 1",
+    "boosts": ["CON", "WIS", "Free"],
+    "flaws": ["CHA"],
+    "traits": ["humanoid", "dwarf"]
+  },
+  {
+    "id": "elf",
+    "name": "Elf",
+    "summary": "Graceful, long-lived, and intellectually curious.",
+    "file": "ancestries/elf.json",
+    "image": "images/elf_portrait.png",
+    "source": "Player Core 1",
+    "boosts": ["DEX", "INT", "Free"],
+    "flaws": ["CON"],
+    "traits": ["humanoid", "elf"]
+  },
+  {
+    "id": "gnome",
+    "name": "Gnome",
+    "summary": "Playful tinkerers with curious minds.",
+    "file": "ancestries/gnome.json",
+    "image": "images/gnome_portrait.png",
+    "source": "Player Core 1",
+    "boosts": ["CON", "CHA", "Free"],
+    "flaws": ["STR"],
+    "traits": ["humanoid", "gnome"]
+  },
+  {
+    "id": "goblin",
+    "name": "Goblin",
+    "summary": "Scrappy, energetic tricksters with big ambitions.",
+    "file": "ancestries/goblin.json",
+    "image": "images/goblin_portrait.png",
+    "source": "Player Core 1",
+    "boosts": ["DEX", "CHA", "Free"],
+    "flaws": ["WIS"],
+    "traits": ["humanoid", "goblin"]
+  },
+  {
+    "id": "halfling",
+    "name": "Halfling",
+    "summary": "Lucky and curious, small but tough.",
+    "file": "ancestries/halfling.json",
+    "image": "images/halfling_portrait.png",
+    "source": "Player Core 1",
+    "boosts": ["DEX", "CHA", "Free"],
+    "flaws": ["STR"],
+    "traits": ["humanoid", "halfling"]
+  },
+  {
+    "id": "human",
+    "name": "Human",
+    "summary": "Adaptable and diverse, with boundless potential.",
+    "file": "ancestries/human.json",
+    "image": "images/human_portrait.png",
+    "source": "Player Core 1",
+    "boosts": ["Free", "Free"],
+    "flaws": [],
+    "traits": ["humanoid", "human"]
+  },
+  {
+    "id": "leshy",
+    "name": "Leshy",
+    "summary": "Plant creatures infused with nature spirits.",
+    "file": "ancestries/leshy.json",
+    "image": "images/leshy_portrait.png",
+    "source": "Player Core 1",
+    "boosts": ["CON", "WIS", "Free"],
+    "flaws": ["CHA"],
+    "traits": ["plant", "leshy"]
+  },
+  {
+    "id": "orc",
+    "name": "Orc",
+    "summary": "Powerful and proud warriors of tribal strength.",
+    "file": "ancestries/orc.json",
+    "image": "images/orc_portrait.png",
+    "source": "Player Core 1",
+    "boosts": ["STR", "CON", "Free"],
+    "flaws": ["INT"],
+    "traits": ["humanoid", "orc"]
+  },
+  {
+    "id": "catfolk",
+    "name": "Catfolk",
+    "summary": "Curious and nimble feline humanoids.",
+    "file": "ancestries/catfolk.json",
+    "image": "images/catfolk_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["DEX", "CHA", "Free"],
+    "flaws": ["WIS"],
+    "traits": ["humanoid", "catfolk"]
+  },
+  {
+    "id": "dhampir",
+    "name": "Dhampir",
+    "summary": "Descendants of undead, caught between life and death.",
+    "file": "ancestries/dhampir.json",
+    "image": "images/dhampir_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["STR", "CHA", "Free"],
+    "flaws": ["CON"],
+    "traits": ["humanoid", "dhampir", "undead"]
+  },
+  {
+    "id": "dragonblood",
+    "name": "Dragonblood",
+    "summary": "Tainted by draconic magic, with innate arcane power.",
+    "file": "ancestries/dragonblood.json",
+    "image": "images/dragonblood_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["CHA", "Con", "Free"],
+    "flaws": ["WIS"],
+    "traits": ["humanoid", "dragonblood"]
+  },
+  {
+    "id": "duskwalker",
+    "name": "Duskwalker",
+    "summary": "Shadows cling to these mysterious nocturnal wanderers.",
+    "file": "ancestries/duskwalker.json",
+    "image": "images/duskwalker_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["DEX", "INT", "Free"],
+    "flaws": ["WIS"],
+    "traits": ["humanoid", "duskwalker"]
+  },
+  {
+    "id": "hobgoblin",
+    "name": "Hobgoblin",
+    "summary": "Disciplined and militaristic goblinoid warriors.",
+    "file": "ancestries/hobgoblin.json",
+    "image": "images/hobgoblin_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["CON", "INT", "Free"],
+    "flaws": ["CHA"],
+    "traits": ["humanoid", "hobgoblin"]
+  },
+  {
+    "id": "kholo",
+    "name": "Kholo",
+    "summary": "Hyena-like humanoids with practical resilience.",
+    "file": "ancestries/kholo.json",
+    "image": "images/kholo_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["STR", "CON", "Free"],
+    "flaws": ["INT"],
+    "traits": ["humanoid", "kholo"]
+  },
+  {
+    "id": "kobold",
+    "name": "Kobold",
+    "summary": "Reptilian tricksters with draconic roots.",
+    "file": "ancestries/kobold.json",
+    "image": "images/kobold_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["DEX", "CHA", "Free"],
+    "flaws": ["CON"],
+    "traits": ["humanoid", "kobold"]
+  },
+  {
+    "id": "lizardfolk",
+    "name": "Lizardfolk",
+    "summary": "Scaled and aquatic-adaptable survivors.",
+    "file": "ancestries/lizardfolk.json",
+    "image": "images/lizardfolk_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["STR", "WIS", "Free"],
+    "flaws": ["CHA"],
+    "traits": ["humanoid", "lizardfolk"]
+  },
+  {
+    "id": "ratfolk",
+    "name": "Ratfolk",
+    "summary": "Rodent-like adventurers known for guile and luck.",
+    "file": "ancestries/ratfolk.json",
+    "image": "images/ratfolk_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["DEX", "INT", "Free"],
+    "flaws": ["STR"],
+    "traits": ["humanoid", "ratfolk"]
+  },
+  {
+    "id": "tengu",
+    "name": "Tengu",
+    "summary": "Beaked avian humanoids skilled in blade and air.",
+    "file": "ancestries/tengu.json",
+    "image": "images/tengu_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["DEX", "INT", "Free"],
+    "flaws": ["WIS"],
+    "traits": ["humanoid", "tengu"]
+  },
+  {
+    "id": "tripkee",
+    "name": "Tripkee",
+    "summary": "Frog-like folk with surprising resilience.",
+    "file": "ancestries/tripkee.json",
+    "image": "images/tripkee_portrait.png",
+    "source": "Player Core 2",
+    "boosts": ["CON", "CHA", "Free"],
+    "flaws": ["DEX"],
+    "traits": ["humanoid", "tripkee"]
+  }
+]
